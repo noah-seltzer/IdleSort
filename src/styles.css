@@ -33,8 +33,86 @@ body,
 }
 
 .app-main {
+  position: relative;
   flex: 1;
   min-height: 0;
+}
+
+.hud {
+  position: absolute;
+  inset: 0;
+  padding: 0.75rem 1rem;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.hud-stats {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 0.5rem 0.875rem;
+  border-radius: 8px;
+  background: rgb(18 20 24 / 0.85);
+  border: 1px solid #2a2e36;
+}
+
+.hud-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.hud-stat-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #9aa3ad;
+}
+
+.hud-stat-value {
+  font-size: 1.15rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.hud-run-bonus {
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  background: #ffa04a;
+  color: #111;
+  font-weight: 700;
+  animation: run-pop 400ms ease-out;
+}
+
+@keyframes run-pop {
+  from {
+    transform: scale(1.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.hud-hint,
+.hud-notice {
+  margin: 0;
+  align-self: center;
+  margin-top: auto;
+  padding: 0.5rem 0.875rem;
+  border-radius: 8px;
+  background: rgb(18 20 24 / 0.85);
+  border: 1px solid #2a2e36;
+}
+
+.hud-notice {
+  border-color: #e06c5a;
+  color: #ffb4a8;
+}
+
+.hud-hint + .hud-notice {
+  margin-top: 0;
 }
 
 .factory-canvas {
